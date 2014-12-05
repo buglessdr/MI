@@ -4,18 +4,87 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.amex.mi.util.AccountSummary">
+    tools:context="com.amex.mi.AccountSummary">
 
     <TextView android:text="@string/Latest_Payment" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/paymentStatic"
+        android:textSize="20sp"
         android:layout_below="@+id/paymentDynamic"
-        android:textSize="32sp"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
 
     <TextView android:text="@string/Payments" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/paymentDynamic"
-        android:layout_alignEnd="@+id/paymentStatic"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:text="@string/Pending_Payments" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/paymentPending"
+        android:textSize="20sp"
+        android:layout_below="@+id/paymentStatic"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp" />
+
+    <TextView
+    android:text="@string/inquiries"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/inquries"
+    android:textStyle="bold"
+    android:textSize="32sp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/urgent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/urgent"
+        android:textSize="20sp"
+        android:layout_below="@+id/newInquiry"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
+
+    <TextView
+        android:text="@string/newInquiry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newInquiry"
+        android:textSize="20sp"
+        android:layout_below="@+id/inquries"
+        android:layout_alignStart="@+id/urgent" />
+
+    <TextView
+        android:text="@string/updatedInquiry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updatedInquiry"
+        android:textSize="20sp"
+        android:layout_below="@+id/urgent"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="43dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="payments_button"
+        android:id="@+id/payments_button"
+        android:layout_toEndOf="@+id/paymentPending"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="inquries_button"
+        android:id="@+id/inquries_button"
+        android:layout_toEndOf="@+id/paymentPending"
+        android:layout_alignTop="@+id/inquries"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

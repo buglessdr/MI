@@ -82,6 +82,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
         });
 
+
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
@@ -303,19 +305,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     public void sendMessage() {
-        // Do something in response to button
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.email);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
-//        startActivity(intent);
 
-
-        Intent intent = new Intent(this, InquiryListActivity.class);
+        Intent intent = new Intent(this, AccountSummary.class);
         startActivity(intent);
 
 
     }
+
 
 
 }

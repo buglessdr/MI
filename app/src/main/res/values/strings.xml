@@ -4,6 +4,11 @@
     <string name="app_name">MI</string>
     <string name="Latest_Payment">Latest Payment</string>
     <string name="Payments">Payments</string>
+    <string name="Pending_Payments">Pending Payments</string>
+    <string name="inquiries">Inquiries</string>
+    <string name="urgent">Urgent</string>
+    <string name="newInquiry">New</string>
+    <string name="updatedInquiry">Updated</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>
     <string name="title_activity_inquiry_list">InquiryListActivity</string>

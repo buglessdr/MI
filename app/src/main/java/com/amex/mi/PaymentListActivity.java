@@ -62,8 +62,7 @@ public class PaymentListActivity extends Activity {
 
         setContentView(R.layout.activity_payment_list);
 
-        final View controlsView = findViewById(R.id.fullscreen_content_controls);
-        final View contentView = findViewById(R.id.fullscreen_content);
+        final View contentView = findViewById(R.id.payment_list);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
@@ -83,23 +82,13 @@ public class PaymentListActivity extends Activity {
                             // (Honeycomb MR2 and later), use it to animate the
                             // in-layout UI controls at the bottom of the
                             // screen.
-                            if (mControlsHeight == 0) {
-                                mControlsHeight = controlsView.getHeight();
-                            }
+
                             if (mShortAnimTime == 0) {
                                 mShortAnimTime = getResources().getInteger(
                                         android.R.integer.config_shortAnimTime);
                             }
-                            controlsView.animate()
-                                    .translationY(visible ? 0 : mControlsHeight)
-                                    .setDuration(mShortAnimTime);
-                        } else {
-                            // If the ViewPropertyAnimator APIs aren't
-                            // available, simply show or hide the in-layout UI
-                            // controls.
-                            controlsView.setVisibility(visible ? View.VISIBLE : View.GONE);
-                        }
 
+                        }
                         if (visible && AUTO_HIDE) {
                             // Schedule a hide().
                             delayedHide(AUTO_HIDE_DELAY_MILLIS);
@@ -108,22 +97,13 @@ public class PaymentListActivity extends Activity {
                 });
 
         // Set up the user interaction to manually show or hide the system UI.
-        contentView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (TOGGLE_ON_CLICK) {
-                    mSystemUiHider.toggle();
-                } else {
-                    mSystemUiHider.show();
-                }
-            }
-        });
+
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-    }
+           init();
+       }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -173,7 +153,7 @@ public class PaymentListActivity extends Activity {
 
         List<Payment> payments = userSummary.getPayments();
 
-        TableLayout stk = (TableLayout) findViewById(R.id.inquiryTable);
+        TableLayout stk = (TableLayout) findViewById(R.id.payment_list);
         TableRow tbrow0 = new TableRow(this);
         TextView tv0 = new TextView(this);
         tv0.setText(" status");
@@ -188,7 +168,7 @@ public class PaymentListActivity extends Activity {
         tv2.setTextColor(Color.WHITE);
         tbrow0.addView(tv2);
         TextView tv3 = new TextView(this);
-        tv3.setText(" Respond By Date ");
+        tv3.setText(" Deposited Date ");
         tv3.setTextColor(Color.WHITE);
         tbrow0.addView(tv3);
         stk.addView(tbrow0);
@@ -201,17 +181,17 @@ public class PaymentListActivity extends Activity {
             t1v.setGravity(Gravity.CENTER);
             tbrow.addView(t1v);
             TextView t2v = new TextView(this);
-            t2v.setText(pay.getId());
+            t2v.setText(pay.getId() + "");
             t2v.setTextColor(Color.WHITE);
             t2v.setGravity(Gravity.CENTER);
             tbrow.addView(t2v);
             TextView t3v = new TextView(this);
-            t3v.setText(inq.getAmount());
+            t3v.setText(pay.getAmount());
             t3v.setTextColor(Color.WHITE);
             t3v.setGravity(Gravity.CENTER);
             tbrow.addView(t3v);
             TextView t4v = new TextView(this);
-            t4v.setText(inq.getRespondByDate());
+            t4v.setText(pay.getDepositDate());
             t4v.setTextColor(Color.WHITE);
             t4v.setGravity(Gravity.CENTER);
             tbrow.addView(t4v);
