@@ -21,7 +21,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name="com.amex.mi.DisplayMessageActivity"
+            android:label="@string/title_activity_display_message" >
+        </activity>
+        <activity
+            android:name="com.amex.mi.InquiryListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_inquiry_list"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.amex.mi.util.AccountSummary"
+            android:label="@string/title_activity_account_summary" >
+        </activity>
+        <activity
+            android:name="com.amex.mi.PaymentListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_payment_list"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
     </application>
 
 </manifest>
